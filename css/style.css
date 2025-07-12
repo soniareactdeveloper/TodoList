@@ -1,20 +1,23 @@
 /* =================== font part start =========== */
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Frank+Ruhl+Libre:wght@300..900&family=Inter:wght@100..900&family=Jersey+25+Charted&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Podkova:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Frank+Ruhl+Libre:wght@300..900&family=Inter:wght@100..900&family=Jersey+25+Charted&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Podkova:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 /* ================== font part end =============== */
+
 /* =================== common css part start =========== */
 * {
   margin: 0;
   padding: 0;
   outline: 0;
+  box-sizing: border-box;
 }
 :root {
-  --roboto : font-family: "Roboto", sans-serif;
+  --roboto: "Roboto", sans-serif;
 }
 /* ================== common css part end =============== */
+
 /* =================== todo box part start =========== */
 body {
-  background:url(../images/background.png);
+  background: url(../images/background.png);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -22,13 +25,12 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
 }
-.todoitemlist{
+.todoitemlist {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.todoitemlist {
   width: 600px;
   height: 200px;
   border: 2px solid #4D869C;
@@ -53,7 +55,7 @@ body {
   width: 200px;
   text-align: center;
   font-family: "Playfair Display", serif;
-  font-size: 600;
+  font-weight: 600;
   font-size: 26px;
   color: #fff;
   text-shadow: 2px 2px 4px #000000;
@@ -96,7 +98,7 @@ body {
   outline: none;
   border: none;
   border-radius: 10px;
-  background:#eae5e9;
+  background: #eae5e9;
   color: #000;
   font-family: var(--roboto);
   font-weight: 700;
@@ -109,7 +111,7 @@ body {
   outline: none;
   border: none;
   border-radius: 10px;
-  background:#0F1035;
+  background: #0F1035;
   color: #fff;
   font-weight: 900;
   font-size: 34px;
@@ -121,7 +123,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 /* =================== todo list part start =========== */
-.singleTodo{
+.singleTodo {
   width: 600px;
   height: 50px;
   border: 2px solid #4D869C;
@@ -132,14 +134,17 @@ body {
   align-items: center;
   box-shadow: -1px 8px 5px 5px rgba(77,134,156,1);
   margin-bottom: 10px;
+  /* Remove this line ↓ */
+  /* position: fixed; */
 }
+
 .todoSingleInput {
   width: 500px;
   height: 50px;
   outline: none;
   border: none;
   border-radius: 10px;
-  background:transparent;
+  background: transparent;
   color: yellow;
   text-shadow: 2px 2px 4px #000000;
   font-family: var(--roboto);
@@ -159,8 +164,6 @@ body {
   font-weight: 600;
   font-size: 34px;
   color: #000;
-  /* text-shadow: 2px 2px 4px #000000; */
-  font-size: 34px;
 }
 .editBtn:hover {
   color: yellow;
@@ -180,3 +183,131 @@ body {
   color: red;
 }
 /* ================== todo list part end =============== */
+
+/* =================== responsive part start =========== */
+@media (max-width: 1024px) {
+  .todoitemlist,
+  .todobox,
+  .singleTodo {
+    width: 90%;
+    padding-left: 40px;
+  }
+
+  .todoInput {
+    width: 70%;
+    font-size: 20px;
+  }
+
+  .todoButton {
+    width: 25%;
+    font-size: 28px;
+  }
+
+  .checkList h1 {
+    font-size: 36px;
+  }
+
+  .checkList h2 {
+    font-size: 22px;
+  }
+
+  .box {
+    width: 160px;
+    height: 160px;
+  }
+
+  .box p {
+    font-size: 64px;
+    margin-top: 35px;
+  }
+
+  .todoSingleInput {
+    font-size: 20px;
+    width: 70%;
+  }
+
+  .editBtn, .deleteBtn {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .todoitemlist,
+  .todobox,
+  .singleTodo {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .todoInput,
+  .todoSingleInput {
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .todoButton {
+    width: 100%;
+    font-size: 24px;
+  }
+
+  .checkList h1 {
+    font-size: 28px;
+  }
+
+  .checkList h2 {
+    font-size: 18px;
+  }
+
+  .box {
+    width: 140px;
+    height: 140px;
+  }
+
+  .box p {
+    font-size: 50px;
+    margin-top: 30px;
+  }
+
+  .editBtn,
+  .deleteBtn {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkList h1 {
+    font-size: 24px;
+  }
+
+  .checkList h2 {
+    font-size: 16px;
+  }
+
+  .box {
+    width: 120px;
+    height: 120px;
+  }
+
+  .box p {
+    font-size: 40px;
+    margin-top: 25px;
+  }
+
+  .todoInput,
+  .todoSingleInput {
+    font-size: 16px;
+  }
+
+  .todoButton {
+    font-size: 20px;
+  }
+
+  .editBtn,
+  .deleteBtn {
+    font-size: 20px;
+  }
+}
+/* ================== responsive part end =============== */
